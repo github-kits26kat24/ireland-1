@@ -1,9 +1,9 @@
 # https://registry.terraform.io/providers/hashicorp/aws/3.73.0/docs/resources/security_group
 
-resource "aws_security_group" "project_two" {
+resource "aws_security_group" "Project2" {
   name        = "project_two"
   description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.kay2.id
 
   ingress {
     description      = "SSH from VPC"
@@ -59,6 +59,6 @@ resource "aws_security_group" "project_two" {
   }
 
   tags = {
-    Name = "Security Group Project 2"
+    Name = "Kay-Security-Group-Project2"
   }
 }

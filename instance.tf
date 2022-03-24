@@ -14,7 +14,7 @@ sudo systemctl start httpd
 EOF
 
   tags = {
-    Name        = "A"
+    Name        = "Kay_1st_Instance_Web"
     Environment = "Technology"
     Department  = "IT"
   }
@@ -32,7 +32,7 @@ sudo yum install python-3 -y
 EOF
 
   tags = {
-    Name        = "B"
+    Name        = "Kay_2nd_Instance_Python"
     Environment = "Health"
     Department  = "NHS"
   }
@@ -51,14 +51,14 @@ sudo apt-get tomcat-webapps.noarch -y
 sudo apt-get tomcat-admin-webapps.noarch -y
 sudo apt-get install tomcat7-docs -y
 # Restart
-# sudo /etc/init.d/tomcat7 restart -y
+sudo /etc/init.d/tomcat7 restart -y
 
 # Stop
-# sudo /etc/init.d/tomcat7 stop -y
+sudo /etc/init.d/tomcat7 stop -y
 EOF
 
   tags = {
-    Name        = "C"
+    Name        = "Kay_3rd_Instance_Tomcat"
     Environment = "Goverment"
     Department  = "Agriculture"
   }
@@ -84,7 +84,7 @@ sudo /etc/init.d/tomcat7 stop -y
 EOF
 
   tags = {
-    Name        = "D"
+    Name        = "Kay_4th_Instance_Tomcat"
     Environment = "Authomobile"
     Department  = "Hydrid"
   }

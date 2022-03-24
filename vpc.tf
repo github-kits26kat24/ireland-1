@@ -1,14 +1,14 @@
 # https://registry.terraform.io/providers/hashicorp/aws/3.73.0/docs/resources/vpc
 
-resource "aws_vpc" "main" {
+resource "aws_vpc" "kay2" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
 
   tags = {
-    Name = "main"
+    Name = "kay2"
   }
 }
 
 output "Vpc_id" {
-  value = aws_vpc.main.id
+  value = aws_vpc.kay2.id
 }

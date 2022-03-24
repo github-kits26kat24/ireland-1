@@ -5,7 +5,7 @@
 
 resource "aws_route_table" "public" {
   #The Vpc Id
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.kay2.id
 
   route {
     #The CIDR Block Of The Route.
@@ -18,7 +18,7 @@ resource "aws_route_table" "public" {
 
   # A Map Of Tags To Assign To The Resources.
   tags = {
-    Name = "public"
+    Name = "Kay-Public"
   }
 }
 # resource "aws_route_table" "private1" {

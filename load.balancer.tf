@@ -1,9 +1,9 @@
 
-resource "aws_lb" "project_2_lb" {
-  name               = "test-lb-tf"
+resource "aws_lb" "project2_lb" {
+  name               = "Kay-Assignment2-LB" #"test-lb-tf"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.project_two.id]
+  security_groups    = [aws_security_group.Project2.id]
   subnets            = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id]
 
   enable_deletion_protection = false
@@ -15,12 +15,12 @@ resource "aws_lb" "project_2_lb" {
   #   }
 
   tags = {
-    Environment = "Project Department"
+    Environment = "Project-Department"
   }
 }
 
 resource "aws_lb_listener" "front_end" {
-  load_balancer_arn = aws_lb.project_2_lb.arn
+  load_balancer_arn = aws_lb.project2_lb.arn
   port              = "80"
   protocol          = "HTTP"
 
@@ -31,9 +31,9 @@ resource "aws_lb_listener" "front_end" {
 }
 
 resource "aws_lb_target_group" "project2" {
-  name     = "tf-project-two-lb-tg"
+  name     = "Kay-Assignment2-lb-tg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.main.id
+  vpc_id   = aws_vpc.kay2.id
 }
 

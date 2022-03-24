@@ -4,10 +4,10 @@
 resource "aws_internet_gateway" "Project2" {
 
   #The Vpc ID To Create in.
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.kay2.id
 
   # A Map Of Tags To Assign To The Resource.
   tags = {
-    Name = "main1"
+    Name = "Kay2"
   }
 }
