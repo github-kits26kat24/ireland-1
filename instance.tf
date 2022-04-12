@@ -1,10 +1,10 @@
 # Resource: aws_instance
 # https://registry.terraform.io/providers/hashicorp/aws/3.73.0/docs/resources/instance
 
-resource "aws_instance" "web" {
-  ami           = "ami-0f490aa86888107af"
+resource "aws_instance" "web_A" {
+  ami           = "ami-048be0ea83345e4c1"
   instance_type = "t3.micro"
-  key_name      = "kits26kat24"
+  key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_1.id
   user_data     = <<EOF
 #!/bin/bash
@@ -20,10 +20,10 @@ EOF
   }
 }
 
-resource "aws_instance" "python3" {
-  ami           = "ami-0f490aa86888107af"
+resource "aws_instance" "Web_B" {
+  ami           = "ami-048be0ea83345e4c1"
   instance_type = "t3.micro"
-  key_name      = "kits26kat24"
+  key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_2.id
   user_data     = <<EOF
 #!/bin/bash
@@ -39,9 +39,9 @@ EOF
 }
 
 resource "aws_instance" "Tomcat-App-Server-1" {
-  ami           = "ami-0f490aa86888107af"
+  ami           = "ami-048be0ea83345e4c1"
   instance_type = "t3.micro"
-  key_name      = "kits26kat24"
+  key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_3.id
   user_data     = <<EOF
 #!/bin/bash
@@ -65,9 +65,9 @@ EOF
 }
 
 resource "aws_instance" "Tomcat-App-Server-2" {
-  ami           = "ami-0f490aa86888107af"
+  ami           = "ami-048be0ea83345e4c1"
   instance_type = "t3.micro"
-  key_name      = "kits26kat24"
+  key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_4.id
   user_data     = <<EOF
 #!/bin/bash

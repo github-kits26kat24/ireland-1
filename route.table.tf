@@ -5,7 +5,7 @@
 
 resource "aws_route_table" "public" {
   #The Vpc Id
-  vpc_id = aws_vpc.kay2.id
+  vpc_id = aws_vpc.project03.id
 
   route {
     #The CIDR Block Of The Route.
@@ -13,7 +13,7 @@ resource "aws_route_table" "public" {
 
     # Gateway_ID Identifier Of A Vpc Internet Gateway Or A Vitual Private Gateway.
 
-    gateway_id = aws_internet_gateway.Project2.id
+    gateway_id = aws_internet_gateway.Project03.id
   }
 
   # A Map Of Tags To Assign To The Resources.

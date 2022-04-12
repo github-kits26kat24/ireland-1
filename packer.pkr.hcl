@@ -10,9 +10,9 @@ packer {
 
 source "amazon-ebs" "ubuntu" {
 
-  ami_name      = "kits26kat24"
+  ami_name      = "kits26kat2486"
   instance_type = "t2.micro"
-  region        = "eu-west-2"
+  region        = "eu-west-1"
   source_ami_filter {
     filters = {
       name                = "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20210928"
