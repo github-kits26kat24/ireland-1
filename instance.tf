@@ -14,7 +14,7 @@ sudo systemctl start httpd
 EOF
 
   tags = {
-    Name        = "Kay_1st_Instance_Web"
+    Name        = "Dev-Web-Server-A"
     Environment = "Technology"
     Department  = "IT"
   }
@@ -32,7 +32,7 @@ sudo yum install python-3 -y
 EOF
 
   tags = {
-    Name        = "Kay_2nd_Instance_Python"
+    Name        = "Dev-Web-Server-B"
     Environment = "Health"
     Department  = "NHS"
   }
@@ -58,7 +58,7 @@ sudo /etc/init.d/tomcat7 stop -y
 EOF
 
   tags = {
-    Name        = "Kay_3rd_Instance_Tomcat"
+    Name        = "Dev-Tomcat-Server-A"
     Environment = "Goverment"
     Department  = "Agriculture"
   }
@@ -84,7 +84,7 @@ sudo /etc/init.d/tomcat7 stop -y
 EOF
 
   tags = {
-    Name        = "Kay_4th_Instance_Tomcat"
+    Name        = "Dev-Tomcat-Server-B"
     Environment = "Authomobile"
     Department  = "Hydrid"
   }
