@@ -4,7 +4,6 @@ resource "aws_security_group" "Project03" {
   name        = "project_two"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.project03.id
-
   ingress {
     description      = "SSH from VPC"
     from_port        = 22

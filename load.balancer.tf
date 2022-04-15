@@ -8,11 +8,11 @@ resource "aws_lb" "project03_lb" {
 
   enable_deletion_protection = false
 
-  #   access_logs {
-  #     bucket  = aws_s3_bucket.lb_logs.bucket
-  #     prefix  = "test-lb"
-  #     enabled = true
-  #   }
+  # access_logs {
+  #   bucket  = aws_s3_bucket.project03.bucket
+  #   prefix  = "test-lb"
+  #   enabled = true
+  # }
 
   tags = {
     Environment = "wip"

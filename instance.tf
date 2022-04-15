@@ -2,7 +2,7 @@
 # https://registry.terraform.io/providers/hashicorp/aws/3.73.0/docs/resources/instance
 
 resource "aws_instance" "web_A" {
-  ami           = "ami-00902223dd91e78c5"
+  ami           = "ami-0e8cb4bdc5bb2e6c0"
   instance_type = "t3.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_1.id
@@ -21,7 +21,7 @@ EOF
 }
 
 resource "aws_instance" "Web_B" {
-  ami           = "ami-00902223dd91e78c5"
+  ami           = "ami-0e8cb4bdc5bb2e6c0"
   instance_type = "t3.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_2.id
@@ -40,20 +40,20 @@ EOF
 }
 
 resource "aws_instance" "Tomcat-App-Server-1" {
-  ami           = "ami-00902223dd91e78c5"
+  ami           = "ami-0e8cb4bdc5bb2e6c0"
   instance_type = "t3.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_3.id
   user_data     = <<EOF
 #!/bin/bash
-sudo apt-get update -y
-sudo apt-get install tomcat  -y
-sudo apt-get tomcat-webapps.noarch -y
-sudo apt-get tomcat-admin-webapps.noarch -y
-sudo apt-get install tomcat7-docs -y
+sudo yum install tomcat  -y
+sudo yum tomcat-webapps.noarch -y
+sudo yum tomcat-admin-webapps.noarch -y
+sudo yum install tomcat7-docs -y
 # Restart
 sudo /etc/init.d/tomcat7 restart -y
-
+sudo systemctl start tomcat -y
+sudo systemctl enable tomcat -y
 # Stop
 sudo /etc/init.d/tomcat7 stop -y
 EOF
@@ -66,26 +66,26 @@ EOF
 }
 
 resource "aws_instance" "Tomcat-App-Server-2" {
-  ami           = "ami-00902223dd91e78c5"
+  ami           = "ami-0e8cb4bdc5bb2e6c0"
   instance_type = "t3.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_4.id
-  user_data     = <<EOF
+    user_data     = <<EOF
 #!/bin/bash
-sudo apt-get update -y
-sudo apt-get install tomcat  -y
-sudo apt-get tomcat-webapps.noarch -y
-sudo apt-get tomcat-admin-webapps.noarch -y
-sudo apt-get install tomcat7-docs -y
+sudo yum install tomcat  -y
+sudo yum tomcat-webapps.noarch -y
+sudo yum tomcat-admin-webapps.noarch -y
+sudo yum install tomcat7-docs -y
 # Restart
 sudo /etc/init.d/tomcat7 restart -y
-
+sudo systemctl start tomcat -y
+sudo systemctl enable tomcat -y
 # Stop
 sudo /etc/init.d/tomcat7 stop -y
 EOF
 
   tags = {
-    Name        = "Tomcat-Server-A"
+    Name        = "Tomcat-Server-B"
     Environment = "wip"
     Department  = "Hydrid"
   }
