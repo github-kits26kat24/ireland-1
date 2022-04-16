@@ -5,7 +5,7 @@ pipeline {
     environment  {
                 AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
                 AWS_SECRET_ACCESS_KEY = credentials ('AWS_SECRET_ACCESS_KEY')
-                AWS_REGION = 'eu-west-2'
+                AWS_REGION = 'eu-west-1'
                 CURRENT_BRANCH = "${env.BRANCH_NAME == "wip" ? "dev" : env.BRANCH_NAME}"
     }
     stages {
@@ -38,8 +38,14 @@ pipeline {
     
     post {
         always  {
-            echo ' i just ran a pipleine'
+            echo 'i just ran a pipleine'
             deleteDir()
+        }
+        success {
+            echo 'pipiline ran successfully'
+        }   
+        failure {
+            echo 'pipeline failed'
         }
     }
 }
