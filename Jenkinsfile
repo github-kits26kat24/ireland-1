@@ -1,5 +1,3 @@
-# Terraform SMC using CI/CD Pipeline build deploy on AWS.
-
 pipeline {
     
     agent any 
