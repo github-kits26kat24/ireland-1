@@ -14,12 +14,12 @@ pipeline {
                 sh 'terraform validate'
             }
         }
-        stage ('terraform plan'){
+        stage ('terraform plan') {
             steps {
                 sh 'terraform plan'
             }
         }
-         stage ('terraform apply'){
+         stage ('terraform apply') {
             steps {
                 sh 'terraform apply -auto-approve'
             }
