@@ -15,7 +15,7 @@ EOF
 
   tags = {
     Name        = "Web-Server-A"
-    Environment = "wip"
+    Environment = "var.wip"
     Department  = "IT"
   }
 }

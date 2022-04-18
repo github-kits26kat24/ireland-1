@@ -4,8 +4,7 @@ resource "aws_s3_bucket" "project03" {
 
   tags = {
     Name        = "Kay-Assignment03"
-    Environment = "Department"
-    Department  = "Environment"
+    Environment = "wip"
   }
 }
 
