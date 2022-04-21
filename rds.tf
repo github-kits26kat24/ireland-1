@@ -11,7 +11,7 @@ resource "aws_db_instance" "Tomcat-App-Server-1" {
   db_subnet_group_name = aws_db_subnet_group.private_subnet_3.name
 }
 resource "aws_db_subnet_group" "private_subnet_3" {
-  name       = "assignment03"
+  name       = "test03"
   subnet_ids = [aws_subnet.private_subnet_3.id, aws_subnet.private_subnet_4.id]
   tags = {
     Name = "My_DB_subnet_project03"

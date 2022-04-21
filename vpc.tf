@@ -12,3 +12,5 @@ resource "aws_vpc" "project03" {
 output "Vpc_id" {
   value = aws_vpc.project03.id
 }
+
+

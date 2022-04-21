@@ -3,7 +3,7 @@
 
 resource "aws_instance" "web_A" {
   ami           = "ami-0e8cb4bdc5bb2e6c0"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_1.id
   tags = {
@@ -15,7 +15,7 @@ resource "aws_instance" "web_A" {
 
 resource "aws_instance" "Web_B" {
   ami           = "ami-0e8cb4bdc5bb2e6c0"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_2.id
   tags = {
@@ -27,7 +27,7 @@ resource "aws_instance" "Web_B" {
 
 resource "aws_instance" "Tomcat-App-Server-1" {
   ami           = "ami-0e8cb4bdc5bb2e6c0"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_3.id
   tags = {
@@ -39,7 +39,7 @@ resource "aws_instance" "Tomcat-App-Server-1" {
 
 resource "aws_instance" "Tomcat-App-Server-2" {
   ami           = "ami-0e8cb4bdc5bb2e6c0"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_4.id
   tags = {
