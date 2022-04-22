@@ -6,20 +6,20 @@ pipeline {
                 AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
                 AWS_SECRET_ACCESS_KEY = credentials ('AWS_SECRET_ACCESS_KEY')
                 AWS_REGION = 'eu-west-1'
-                CURRENT_BRANCH = "${env.BRANCH_NAME == "wip" ? "prod" : env.BRANCH_NAME}"
+                CURRENT_BRANCH = "${env.BRANCH_NAME == "wip" ? "dev" : env.BRANCH_NAME}"
     }
     stages {
         stage ('terraform validate') {
             steps  {
                 echo 'about to perform code validation'
-                sh 'terraform init --backend-config="key=${prod}/terraform.tfstate"'
+                sh 'terraform init --backend-config="key=${dev}/terraform.tfstate"'
                 sh 'terraform validate'
             }
         }
         stage ('terraform plan') {
             steps  {
                 echo 'about to perform terraform plan'
-                sh 'terraform plan -var-file=${prod}.tfvars'
+                sh 'terraform plan -var-file=${dev}.tfvars'
             }
         }
         stage ('terraform apply') {
