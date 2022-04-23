@@ -6,7 +6,7 @@ pipeline {
                 AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
                 AWS_SECRET_ACCESS_KEY = credentials ('AWS_SECRET_ACCESS_KEY')
                 AWS_REGION = 'eu-west-1'
-                CURRENT_BRANCH = "${env.BRANCH_NAME == "wip" ? "prod" : env.BRANCH_NAME}"
+                CURRENT_BRANCH = "${env.BRANCH_NAME == "wip" ? "dev" : env.BRANCH_NAME}"
     }
     stages {
         stage ('terraform validate') {
