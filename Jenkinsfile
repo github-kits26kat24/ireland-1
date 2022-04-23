@@ -12,14 +12,14 @@ pipeline {
         stage ('terraform validate') {
             steps  {
                 echo 'about to perform code validation'
-                sh 'terraform init --backend-config="key=${dev}/terraform.tfstate"'
+                sh 'terraform init --backend-config="key=${CURRENT_BRANCH}/terraform.tfstate"'
                 sh 'terraform validate'
             }
         }
         stage ('terraform plan') {
             steps  {
                 echo 'about to perform terraform plan'
-                sh 'terraform plan -var-file=${dev}.tfvars'
+                sh 'terraform plan -var-file=${CURRENT_BRANCH}.tfvars'
             }
         }
         stage ('terraform apply') {
@@ -31,7 +31,7 @@ pipeline {
             }
             steps  {
                 echo 'about to perform terraform apply....'
-                sh 'terraform apply -var-file=${dev}.tfvars'
+                sh 'terraform apply -var-file=${CURRENT_BRANCH}.tfvars'
             }
         }
     }
