@@ -31,11 +31,11 @@ pipeline {
             }
             steps  {
                 echo 'about to perform terraform apply....'
-                sh 'terraform apply -var-file=${CURRENT_BRANCH.tfvars'
+                sh 'terraform apply -var-file=${CURRENT_BRANCH}.tfvars'
             }
         }
     }
-    
+  
     post {
         always  {
             echo ' i just ran a pipleine'
