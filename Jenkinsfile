@@ -1,4 +1,4 @@
- pipeline {
+pipeline {
     agent any 
     environment  {
                 AWS_ACCESS_KEY = credentials ('AWS_ACCESS_KEY')
@@ -41,4 +41,3 @@
         }
     }
 }
-    
