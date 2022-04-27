@@ -1,32 +1,32 @@
 
-# packer {
-#   required_plugins {
-#     amazon = {
-#       version = ">= 0.0.1"
-#       source  = "github.com/hashicorp/amazon"
-#     }
-#   }
-# }
+packer {
+  required_plugins {
+    amazon = {
+      version = ">= 0.0.1"
+      source  = "github.com/hashicorp/amazon"
+    }
+  }
+}
 
-# source "amazon-ebs" "ubuntu" {
+source "amazon-ebs" "ubuntu" {
 
-#   ami_name      = "kits26kat2486"
-#   instance_type = "t2.micro"
-#   region        = "eu-west-1"
-#   source_ami_filter {
-#     filters = {
-#       name                = "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20210928"
-#       root-device-type    = "ebs"
-#       virtualization-type = "hvm"
-#     }
-#     most_recent = true
-#     owners      = ["099720109477"]
-#   }
-#   ssh_username = "ubuntu"
-# }
+  ami_name      = "kits26kat2486"
+  instance_type = "t2.micro"
+  region        = "eu-west-1"
+  source_ami_filter {
+    filters = {
+      name                = "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20210928"
+      root-device-type    = "ebs"
+      virtualization-type = "hvm"
+    }
+    most_recent = true
+    owners      = ["099720109477"]
+  }
+  ssh_username = "ubuntu"
+}
 
-# build {
-#   sources = [
-#     "source.amazon-ebs.ubuntu"
-#   ]
-# }
+build {
+  sources = [
+    "source.amazon-ebs.ubuntu"
+  ]
+}

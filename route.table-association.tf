@@ -13,13 +13,13 @@ resource "aws_route_table_association" "ass1" {
   route_table_id = aws_route_table.public.id
 }
 
-resource "aws_route_table_association" "ass2" {
-  # The subnet ID to create an association. Conflicts with
-  subnet_id = aws_subnet.public_subnet_2.id
+# resource "aws_route_table_association" "ass2" {
+#   # The subnet ID to create an association. Conflicts with
+#   subnet_id = aws_subnet.public_subnet_2.id
 
-  # The ID of the routing table to associate with.
-  route_table_id = aws_route_table.public.id
-}
+#   # The ID of the routing table to associate with.
+#   route_table_id = aws_route_table.public.id
+# }
 
 # resource "aws_route_table_association" "ass3" {
 #   # The subnet ID to create an association. Conflicts with
