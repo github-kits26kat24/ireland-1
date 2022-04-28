@@ -4,7 +4,7 @@ resource "aws_lb" "project03_lb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.Project03.id]
-  subnets            = [aws_subnet.public_subnet_1.id]
+  subnets            = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id]
 
   enable_deletion_protection = false
 
