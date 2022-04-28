@@ -14,22 +14,25 @@ pipeline {
                 sh 'terraform validate'
             }
         }
+
         stage ('terraform plan') {
             steps  {
                 echo 'about to perform terraform plan'
                 sh 'terraform plan -var-file=dev.tfvars'
             }
         }
+
         stage ('terraform deploy') {
              options {
                 timeout (time: 2, unit: 'MINUTES')
-                echo 'timestamp'
             }
+
             steps  {
                 input (message : "Happy to deploy?")
                 echo 'would have deploy'
             }
         }
+        
         stage ('terraform apply') {
             when {
                 anyOf {
