@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-      bucket = "bucketproject03"
+      bucket = "wip-project03"
       region = "eu-west-1"
   }
 }
