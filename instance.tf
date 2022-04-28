@@ -7,7 +7,7 @@ resource "aws_instance" "web_A" {
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_1.id
   tags = {
-    Name        = "Dev-Web-Server-A"
+    Name        = "Web-Server-A"
     Environment = "Dev"
   }
 }
@@ -18,7 +18,7 @@ resource "aws_instance" "Web_B" {
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.public_subnet_2.id
   tags = {
-    Name        = "Dev-Web-Server-B"
+    Name        = "Web-Server-B"
     Environment = "Dev"
   }
 }
@@ -39,6 +39,7 @@ resource "aws_instance" "Tomcat-App-Server-2" {
   instance_type = "t2.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_4.id
+
   tags = {
     Name        = "Dev-Tomcat-Server-B"
     Environment = "Dev"
