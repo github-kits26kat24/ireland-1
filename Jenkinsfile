@@ -21,6 +21,10 @@ pipeline {
             }
         }
         stage ('terraform deploy') {
+             options {
+                timeout (time: 2, unit: 'MINUTES')
+                echo 'waiting for approval'
+            }
             steps  {
                 input (message : "Happy to deploy?")
                 echo 'would have deploy'
