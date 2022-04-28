@@ -20,6 +20,12 @@ pipeline {
                 sh 'terraform plan -var-file=dev.tfvars'
             }
         }
+        stage ('terraform deploy') {
+            steps  {
+                input:(message: "Happy to deploy")
+                echo 'would have deploy'
+            }
+        }
         stage ('terraform apply') {
             when {
                 anyOf {
@@ -38,6 +44,12 @@ pipeline {
         always  {
             echo ' i just ran a pipleine'
             deleteDir()
+        }
+         success {
+            echo 'pipleine ran successfully'
+        }
+        failure {
+            echo 'pipleine failed'
         }
     }
 }
