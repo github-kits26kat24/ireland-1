@@ -22,7 +22,7 @@ pipeline {
         }
         stage ('terraform deploy') {
             steps  {
-                input:(message: "Happy to deploy")
+                input (message : "Happy to deploy?")
                 echo 'would have deploy'
             }
         }
