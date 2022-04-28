@@ -8,7 +8,7 @@ resource "aws_instance" "web_A" {
   subnet_id     = aws_subnet.public_subnet_1.id
 
   tags = {
-    Name = var.environment
+    Name = "Web-A"
   }
 }
 
@@ -19,7 +19,7 @@ resource "aws_instance" "Web_B" {
   subnet_id     = aws_subnet.public_subnet_2.id
 
   tags = {
-    Name        = var.environment
+    Name = "Web-B"
   }
 }
 
@@ -28,10 +28,9 @@ resource "aws_instance" "Tomcat-App-Server-1" {
   instance_type = "t2.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_3.id
+
   tags = {
-    Name        = "Tomcat-Server-A"
-    Environment = "wip"
-    Department  = "Agriculture"
+    Name = "Tomcat-Server-A"
   }
 }
 
@@ -40,9 +39,8 @@ resource "aws_instance" "Tomcat-App-Server-2" {
   instance_type = "t2.micro"
   key_name      = "kits26kat2486"
   subnet_id     = aws_subnet.private_subnet_4.id
+
   tags = {
-    Name        = "Tomcat-Server-B"
-    Environment = "wip"
-    Department  = "Hydrid"
+    Name = "Tomcat-Server-B"
   }
 }
