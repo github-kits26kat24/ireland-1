@@ -30,7 +30,7 @@ resource "aws_instance" "Tomcat-App-Server-1" {
   subnet_id     = aws_subnet.private_subnet_3.id
 
   tags = {
-    Name = "Tomcat-Server-A"
+    Name = "Tomcat-A"
   }
 }
 
@@ -41,6 +41,6 @@ resource "aws_instance" "Tomcat-App-Server-2" {
   subnet_id     = aws_subnet.private_subnet_4.id
 
   tags = {
-    Name = "Tomcat-Server-B"
+    Name = "Tomcat-B"
   }
 }
