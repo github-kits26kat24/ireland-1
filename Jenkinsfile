@@ -42,7 +42,7 @@ pipeline {
             }
             steps  {
                 echo 'about to perform terraform apply....'
-                sh 'terraform apply -var-file={dev}.tfvars -auto-approve'
+                sh 'terraform apply -var-file=dev.tfvars -auto-approve'
                 
             }
         }
