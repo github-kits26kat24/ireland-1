@@ -18,7 +18,7 @@ pipeline {
         stage ('terraform plan') {
             steps  {
                 echo 'about to perform terraform plan'
-                sh 'terraform plan -var-file={dev}.tfvars'
+                sh 'terraform plan -var-file=dev.tfvars'
             }
         }
 
